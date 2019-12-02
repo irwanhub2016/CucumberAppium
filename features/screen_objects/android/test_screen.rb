@@ -1,7 +1,7 @@
 # Test screen class
 class TestScreen < TestBaseScreen
   attr_reader :add_contact_button, :phone_text_field, :skip_text, :tab_login, :login_with_email, :input_email, :continue_with_email_text,
-  :input_password, :button_login, :slide, :tab_profile
+  :input_password, :button_login, :slide, :tab_profile, :banner
 
   def initialize
     @add_contact_button = 'addContactButton'
@@ -14,6 +14,7 @@ class TestScreen < TestBaseScreen
     @button_login = 'com.she.sehatq.debug:id/btn_login'
     @slide = 'com.she.sehatq.debug:id/ivHero'
     @tab_profile = "//android.widget.FrameLayout[@content-desc='Profile']"
+    @banner = 'com.she.sehatq.debug:id/ivTopFeature'
   end
 
   def long_wait_for
@@ -65,7 +66,7 @@ class TestScreen < TestBaseScreen
     tap_on('id', button_login)
   end
 
-  def verify_success_login
-    element_exists('xpath', tab_profile)
+  def banner_loaded?
+    element_exists('id', banner_loaded?)
   end
 end

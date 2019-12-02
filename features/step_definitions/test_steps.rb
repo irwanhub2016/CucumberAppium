@@ -29,5 +29,4 @@ end
 
 Then(/^user verify login success$/) do
   @screen.test_screen.short_wait_for { element_exists('xpath', @screen.test_screen.tab_profile) }
-  @screen.test_screen.verify_success_login?
 end
