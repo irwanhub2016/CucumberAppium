@@ -11,4 +11,4 @@ Open [_Appium for mac_](https://gist.github.com/maggiesavovska/d2d47345c92fdf70e
 * From anothor **cmd** window `cd` to the project folder
 * Run `bundle install`
 * Run `bundle exec cucumber features\login.feature` to start the scenario test
-* Or you can just run with `cucumber features\login.feature` to start the scenario test
+* Or you can also run with `cucumber features\login.feature`
