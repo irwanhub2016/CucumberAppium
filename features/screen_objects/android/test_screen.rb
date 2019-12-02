@@ -1,7 +1,8 @@
 # Test screen class
 class TestScreen < TestBaseScreen
   attr_reader :add_contact_button, :phone_text_field, :skip_text, :tab_login, :login_with_email, :input_email, :continue_with_email_text,
-  :input_password, :button_login, :slide, :tab_profile, :banner
+  :input_password, :button_login, :slide, :tab_profile, :banner, :button_access_register, :button_register, :input_new_full_name,
+  :input_new_password, :check_box, :input_new_email, :button_skip
 
   def initialize
     @add_contact_button = 'addContactButton'
@@ -15,6 +16,13 @@ class TestScreen < TestBaseScreen
     @slide = 'com.she.sehatq.debug:id/ivHero'
     @tab_profile = "//android.widget.FrameLayout[@content-desc='Profile']"
     @banner = 'com.she.sehatq.debug:id/ivTopFeature'
+    @button_access_register = 'com.she.sehatq.debug:id/rl_registration'
+    @button_register = 'com.she.sehatq.debug:id/btn_signup'
+    @input_new_full_name = "//android.widget.EditText[@text='Type your full name']"
+    @input_new_email = "//android.widget.EditText[@text='example@example.com']"
+    @input_new_password = "//android.widget.EditText[@text='Minimum 6 karakter']"
+    @check_box = 'com.she.sehatq.debug:id/cb_terms'
+    @button_skip = 'com.she.sehatq.debug:id/tv_skip'
   end
 
   def long_wait_for
@@ -68,5 +76,33 @@ class TestScreen < TestBaseScreen
 
   def banner_loaded?
     element_exists('id', banner_loaded?)
+  end
+
+  def tap_access_register
+    tap_on('id', button_access_register)
+  end
+  
+  def fill_new_full_name(arg)
+    fill_on('xpath', input_new_full_name, arg)
+  end
+
+  def fill_new_email(arg)
+    fill_on('xpath', input_new_email, arg)
+  end
+
+  def fill_new_password(arg)
+    fill_on('xpath', input_new_password, arg)
+  end
+
+  def tap_check_box
+    tap_on('id', check_box)
+  end
+
+  def submit_register
+    tap_on('id', button_register)
+  end
+
+  def tap_skip
+    tap_on('id', button_skip)
   end
 end

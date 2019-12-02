@@ -4,6 +4,7 @@ require 'cucumber/ast'
 require 'rspec/expectations'
 require 'pry'
 require 'selenium-webdriver'
+require 'faker'
 
 class AppiumWorld
 end

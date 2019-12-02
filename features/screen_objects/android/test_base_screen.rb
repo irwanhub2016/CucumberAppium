@@ -18,7 +18,6 @@ class TestBaseScreen < Appium::Driver
     query(type, element).click
   end
 
-  # TODO: Only works for IDs
   def element_exists(type, element)
     elem = query(type, element)
     elem.displayed?
