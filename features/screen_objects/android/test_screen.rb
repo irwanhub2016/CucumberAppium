@@ -36,12 +36,12 @@ class TestScreen < TestBaseScreen
   end
 
   def tap_tab_login
-    sleep 5
+    wait_for { element_exists('id', tab_login) }
     tap_on('id', tab_login)
   end
 
   def tap_login_with_email
-    sleep 5
+    wait_for { element_exists('id', continue_with_email_text) }
     tap_on('id', continue_with_email_text)
   end
 
