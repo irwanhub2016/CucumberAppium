@@ -1,7 +1,7 @@
 # Test screen class
 class TestScreen < TestBaseScreen
   attr_reader :add_contact_button, :phone_text_field, :skip_text, :tab_login, :login_with_email, :input_email, :continue_with_email_text,
-  :input_password, :button_login
+  :input_password, :button_login, :slide
 
   def initialize
     @add_contact_button = 'addContactButton'
@@ -12,14 +12,19 @@ class TestScreen < TestBaseScreen
     @input_email = "//android.widget.EditText[@text='Ketik email atau username']"
     @input_password = "//android.widget.EditText[@text='Minimum 6 karakter']"
     @button_login = 'com.she.sehatq.debug:id/btn_login'
+    @slide = 'com.she.sehatq.debug:id/ivHero'
   end
 
-  def wait_for
+  def long_wait_for
+    Selenium::WebDriver::Wait.new(:timeout => 30).until { yield }
+  end
+
+  def short_wait_for
     Selenium::WebDriver::Wait.new(:timeout => 5).until { yield }
   end
 
   def main_screen?
-    wait_for { element_exists('id', skip_text) }
+    long_wait_for { element_exists('id', skip_text) }
     element_exists('id', skip_text)
   end
 
@@ -36,12 +41,14 @@ class TestScreen < TestBaseScreen
   end
 
   def tap_tab_login
-    wait_for { element_exists('id', tab_login) }
     tap_on('id', tab_login)
   end
 
+  def login_loaded?
+    element_exists('id', continue_with_email_text)
+  end
+
   def tap_login_with_email
-    wait_for { element_exists('id', continue_with_email_text) }
     tap_on('id', continue_with_email_text)
   end
 

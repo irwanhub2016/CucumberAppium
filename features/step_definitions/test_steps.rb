@@ -7,7 +7,9 @@ When(/^user skip the main screen$/) do
 end
 
 When(/^user access the login page$/) do
+  @screen.test_screen.long_wait_for { element_exists('id', @screen.test_screen.slide) }
   @screen.test_screen.tap_tab_login
+  @screen.test_screen.login_loaded?
 end
 
 When(/^user login with valid email dan password$/) do
