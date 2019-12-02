@@ -1,11 +1,13 @@
 **Installing:**
 
-Open [_Appium for Windows_](https://github.com/appium/appium/blob/master/docs/en/appium-setup/running-on-windows.md) and follow setup instructions.
+Open [_Appium for Windows_](https://github.com/appium/appium/blob/master/docs/en/appium-setup/running-on-windows.md) and follow setup.
+Open [_Appium for mac](https://gist.github.com/maggiesavovska/d2d47345c92fdf70ed4ec10ebb34c170) and follow setup.
 
 **Running:**
 
 * Open a **cmd** window and type `appium`. This will start the server
-* Open `appium.txt` from `config` folder and change _deviceName_ to your currently running _device / emulator_ name (eg: "Pixel_XL_API_25")
+* Open `appium.txt` from `config` folder and change _deviceName_ to your currently running _device / emulator_ name (eg: "Sehatq")
 * From anothor **cmd** window `cd` to the project folder
 * Run `bundle install`
-* Run `bundle exec cucumber features\test.feature` to start the demo test
+* Run `bundle exec cucumber features\login.feature` to start the scenario test
+* Or you can just run with `cucumber features\login.feature` to start the scenario test

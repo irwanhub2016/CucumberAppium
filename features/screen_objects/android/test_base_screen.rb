@@ -24,6 +24,10 @@ class TestBaseScreen < Appium::Driver
     elem.displayed?
   end
 
+  def fill_on(type, element, arg)
+    query(type, element).send_keys arg
+  end
+
   def test_screen
     @test_screen ||= TestScreen.new
   end

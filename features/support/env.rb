@@ -2,6 +2,8 @@ require 'appium_lib'
 require 'appium_lib/driver'
 require 'cucumber/ast'
 require 'rspec/expectations'
+require 'pry'
+require 'selenium-webdriver'
 
 class AppiumWorld
 end
