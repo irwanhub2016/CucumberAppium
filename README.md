@@ -5,7 +5,7 @@ Open [_Appium for mac_](https://gist.github.com/maggiesavovska/d2d47345c92fdf70e
 
 **Running:**
 
-* Open a **cmd** window and type `appium`. This will start the server
+* If you use windows open a **cmd** window and type `appium`, if use mac just type in terminal `appium`. This will start the server
 * Open a **real / emulator / simulator device** to launch the automation app. If you want to run by emulator open [_Run emulator android_](https://developer.android.com/studio/run/emulator)
 * Open `appium.txt` from `config` folder and change _deviceName_ to your currently running _device / emulator_ name (eg: "Sehatq")
 * From anothor **cmd** window `cd` to the project folder
