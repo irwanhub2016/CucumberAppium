@@ -2,7 +2,8 @@
 class TestScreen < TestBaseScreen
   attr_reader :add_contact_button, :phone_text_field, :skip_text, :tab_login, :login_with_email, :input_email, :continue_with_email_text,
   :input_password, :button_login, :slide, :tab_profile, :banner, :button_access_register, :button_register, :input_new_full_name,
-  :input_new_password, :check_box, :input_new_email, :button_skip
+  :input_new_password, :check_box, :input_new_email, :button_skip, :edit_full_name, :edit_email, :full_name_text, :button_access_edit_profile,
+  :button_save_profile, :panel_activity_history
 
   def initialize
     @add_contact_button = 'addContactButton'
@@ -23,6 +24,12 @@ class TestScreen < TestBaseScreen
     @input_new_password = "//android.widget.EditText[@text='Minimum 6 karakter']"
     @check_box = 'com.she.sehatq.debug:id/cb_terms'
     @button_skip = 'com.she.sehatq.debug:id/tv_skip'
+    @full_name_text = 'com.she.sehatq.debug:id/tv_user_fullname'
+    @button_access_edit_profile = 'com.she.sehatq.debug:id/img_edit_profile'
+    @edit_full_name = "//android.widget.EditText[@text='Type something']"
+    @edit_email = "//android.widget.EditText[@text='testsehatq@mailinator.com']"
+    @button_save_profile = 'com.she.sehatq.debug:id/tv_save'
+    @panel_activity_history = 'com.she.sehatq.debug:id/cl_empty_activity_state'
   end
 
   def long_wait_for
@@ -104,5 +111,17 @@ class TestScreen < TestBaseScreen
 
   def tap_skip
     tap_on('id', button_skip)
+  end
+
+  def tap_profile
+    tap_on('xpath', tab_profile)
+  end
+
+  def tap_access_edit_profile
+    tap_on('id', button_access_edit_profile)
+  end
+
+  def save_profile
+    tap_on('id', button_save_profile)
   end
 end

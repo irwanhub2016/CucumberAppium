@@ -14,6 +14,10 @@ class TestBaseScreen < Appium::Driver
     $driver.find_element(:"#{type}", element.to_s)
   end
 
+  def queries(type, element)
+    $driver.find_elements(:"#{type}", element.to_s)
+  end
+
   def tap_on(type, element)
     query(type, element).click
   end

@@ -30,6 +30,15 @@ When(/^user register a new account$/) do
   @screen.test_screen.submit_register
 end
 
+When(/^user access the profile page$/) do
+  sleep 3
+  @screen.test_screen.tap_profile
+end
+
+Then(/^user verify access the profile page success$/) do
+  @screen.test_screen.long_wait_for { element_exists('id', @screen.test_screen.panel_activity_history) }
+end
+
 Then(/^user verify login success$/) do
   @screen.test_screen.short_wait_for { element_exists('xpath', @screen.test_screen.tab_profile) }
 end
@@ -38,4 +47,12 @@ Then(/^user verify register success$/) do
   @screen.test_screen.short_wait_for { element_exists('id', @screen.test_screen.button_skip) }
   @screen.test_screen.tap_skip
   @screen.test_screen.short_wait_for { element_exists('xpath', @screen.test_screen.tab_profile) }
+end
+
+When(/^user edit profile$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^user verify edit profile success$/) do
+  pending # Write code here that turns the phrase above into concrete actions
 end
