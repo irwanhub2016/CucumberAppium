@@ -48,11 +48,3 @@ Then(/^user verify register success$/) do
   @screen.test_screen.tap_skip
   @screen.test_screen.short_wait_for { element_exists('xpath', @screen.test_screen.tab_profile) }
 end
-
-When(/^user edit profile$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^user verify edit profile success$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
